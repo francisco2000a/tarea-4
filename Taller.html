@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script text="text/javascript"></script>
+</head>
+<body>
+    <form class="Formulario" action="">
+
+        <div class="contenedor">
+            
+            <h1>Taller numero 4:</h1> 
+                
+            <div class="input-contenedor">
+            
+                <BUtton type="submit" onclick="Mesesitos()">Meses</BUtton>
+                <button type="submit" onclick="resultado()">Producto</button>
+            
+            </div>
+            
+        </div>
+
+    </form>
+
+        <script text="text/javascript">
+
+            function Mesesitos(){
+
+                var Meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                for(i=0; i < Meses.length; i++){
+                document.write(Meses[i]+"<br/>");
+                text=alert(Meses[i]);
+                }
+
+            }
+            
+            class Producto_alimenticio{
+                
+                constructor (codigo, nombre, precio){
+                this.codigo=codigo; 
+                this.nombre=nombre;
+                this.precio=precio;
+                }
+
+                imprimeDatos(){
+                    document.write("Codigo:" + this.codigo + "<br>" + "Nombre:" + this.nombre + "<br>" + "Precio:" + this.precio + "<br>");
+                }
+            }
+            var producto1=new Producto_alimenticio(1,"Aceite",1);
+            var producto2=new Producto_alimenticio(2,"Lechuga",1);
+            var producto3=new Producto_alimenticio(2,"Tomate",1);
+
+            var Productos = [producto1,producto2,producto3];
+
+            function resultado(){
+                for( var item of Productos){
+                    item.imprimeDatos();
+                    document.write("<br>");
+                }
+            }
+
+
+        </script>
+
+</body>
+</html>
+
+<style>
+    body{
+
+    background-image: url(https://previews.123rf.com/images/juliarstudio/juliarstudio1511/juliarstudio151100637/48223582-bosque-de-invierno-de-fondo-plano-paisaje-simple-y-lindo-para-web-y-dispositivos-m%C3%B3viles.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    }
+
+    .Formulario{
+    background: white;
+    margin-top: 150px;
+    padding: 3px;
+    }
+
+    .contenedor{
+    width: 95%;
+    padding: 15px;
+
+    }
+    h1{
+    text-align: center;/*centra el H1*/
+    color: #2a1a74;/*color de la fuente*/
+    font-size: 40px;/*tamaño de la fuente*/
+    }
+
+   
+    .input-contenedor{/*este*/
+
+    margin-bottom: 2% ;
+    border: 1px solid #aaa;
+
+    }
+
+    button{
+        border: none;
+        width: 100%;
+        color: white;
+        font-size: 20px;
+        background: #1a2537;
+        padding: 8px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    button:hover{
+        background-color: #2a1a74; 
+    }
+
+    @media(min-width: 768px){
+    .Formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+    }
+</style>
